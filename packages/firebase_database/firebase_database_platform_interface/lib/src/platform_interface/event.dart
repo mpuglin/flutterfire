@@ -78,7 +78,9 @@ class DataSnapshotPlatform {
     Object? value;
 
     if (dataValue is Map<Object?, Object?> && childKeys != null) {
-      value = {for (final key in childKeys) key: dataValue[key]};
+      value = {
+        for (final key in childKeys) key: dataValue[key],
+      };
     } else if (dataValue is List<Object?>) {
       value = childKeys!
           .map((key) => dataValue[int.parse(key! as String)])
